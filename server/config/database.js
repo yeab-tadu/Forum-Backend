@@ -1,14 +1,22 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
+
+// const pool = mysql.createPool({
+//   user: process.env.DB_USER,
+//   password: process.env.DB_PASS,
+//   database: process.env.DB_DATABASE,
+//   host: process.env.DB_HOST,
+//   port: "3305",
+//   connectionLimit: 10,
+//   connectTimeout: 60000,
+// });
 
 const pool = mysql.createPool({
-  user: process.env.DB_USER,
-  password: process.env.DB_PASS,
-  database: process.env.DB_DATABASE,
-  host: process.env.DB_HOST,
-  port: "3305",
-  connectionLimit: 10,
+  host: "db4free.net",
+  user: "zeyeab19",
+  password: "yeab#yab@05",
+  database: "evangadidb27",
+  connectTimeout: 60000,
 });
-
 pool.getConnection(() => {
   console.log("database connected");
 });
